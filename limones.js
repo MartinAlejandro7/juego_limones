@@ -87,6 +87,7 @@ function detectarAtrapado(){
         velocidadCaida = 100;
     }else if(puntaje == 10){
         alert("TIENES LOS LIMONES, AHORA TE FALTA SAL Y TEQUILA")
+    clearInterval(intervalo);
     }
     
 }
@@ -106,6 +107,9 @@ function detectarPiso(){
     }
     if (vidas == 0){
         alert("GAME OVER")
+        clearInterval(intervalo)
     }
+    
       
 }
+
