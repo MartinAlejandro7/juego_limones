@@ -12,6 +12,8 @@ let limonX = canvas.width/2;
 let limonY = 5;
 let puntaje = 0;
 let vidas = 3;
+let velocidadCaida = 200
+let intervalo
 
 function dibujarSuelo(){
     ctx.fillStyle= ("red")
@@ -24,6 +26,7 @@ function dibujarPersonaje(){
 }
 
 function iniciar(){
+    intervalo=setInterval(bajarLimon, velocidadCaida)
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -66,6 +69,7 @@ function bajarLimon (){
     dibujarLimon();
     refrescarPantalla();
     detectarAtrapado();
+    detectarColision();
 }
 function detectarColision(){
     if(limonX+ANCHO_LIMON > personajeX && 
@@ -85,11 +89,14 @@ function aparecerLimon(){
     
 }
 function detectarAtrapado(){
-    if (limonY + ALTURA_LIMON == canvas.height-ALTURA_SUELO){
+    if (limonY + ALTURA_LIMON == canvas.height-ALTURA_SUELO ){
         aparecerLimon();
         vidas = vidas  - 1
         mostrarEnSpan("txtVida", vidas)
-
+        
     }
-    
+    if (vidas == 0){
+        alert("GAME OVER")
+    }
+      
 }
