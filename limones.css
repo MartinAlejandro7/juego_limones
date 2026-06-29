@@ -213,3 +213,43 @@ canvas{
 
     box-shadow:0 10px 20px rgba(239,68,68,.45);
 }
+.banner-goku{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:15px;
+
+}
+
+.banner-goku img{
+
+    width:100%;
+
+    max-width:900px;
+
+    border-radius:25px;
+
+    border:5px solid #ffb300;
+
+    box-shadow:
+        0 0 20px #ff9800,
+        0 0 40px #ff9800,
+        0 0 70px #ffd54f;
+
+    transition:.4s;
+}
+
+.banner-goku img:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+        0 0 30px #ffd54f,
+        0 0 60px orange,
+        0 0 90px yellow;
+
+}
