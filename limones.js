@@ -81,13 +81,19 @@ function detectarAtrapado(){
         mostrarEnSpan("txtPuntaje", puntaje)
     }
     if(puntaje == 3 ){
-        velocidadCaida = 150;
+        clearInterval(intervalo)
+        velocidadCaida = 100;
+        intervalo = setInterval(bajarLimon, velocidadCaida)
 
     }else if(puntaje == 6){
-        velocidadCaida = 100;
+        clearInterval(intervalo)
+        velocidadCaida = 50;
+        intervalo = setInterval(bajarLimon, velocidadCaida)
     }else if(puntaje == 10){
+        clearInterval(intervalo);
         alert("TIENES LOS LIMONES, AHORA TE FALTA SAL Y TEQUILA")
-    clearInterval(intervalo);
+        
+    return ;
     }
     
 }
@@ -111,5 +117,20 @@ function detectarPiso(){
     }
     
       
+}
+
+function reiniciar(){
+    clearInterval(intervalo)
+    velocidadCaida = 200
+    vidas = 3;
+    puntaje = 0;
+    
+    let reiniciarVidas=document.getElementById("txtVida")
+    reiniciarVidas.innerText= vidas;
+
+    let reiniciarPuntaje = document.getElementById("txtPuntaje")
+    reiniciarPuntaje.innerText = puntaje
+
+    iniciar();
 }
 
