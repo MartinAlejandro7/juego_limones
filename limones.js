@@ -79,8 +79,7 @@ function detectarAtrapado(){
         aparecerLimon();
         puntaje = puntaje + 1
         mostrarEnSpan("txtPuntaje", puntaje)
-    }
-    if(puntaje == 3 ){
+        if(puntaje == 3 ){
         clearInterval(intervalo)
         velocidadCaida = 100;
         intervalo = setInterval(bajarLimon, velocidadCaida)
@@ -94,6 +93,8 @@ function detectarAtrapado(){
         alert("TIENES LOS LIMONES, AHORA TE FALTA SAL Y TEQUILA")
         
     return ;
+    }
+    
     }
     
 }
