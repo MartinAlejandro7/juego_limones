@@ -81,15 +81,16 @@ function detectarAtrapado(){
         mostrarEnSpan("txtPuntaje", puntaje)
         if(puntaje == 3 ){
         clearInterval(intervalo)
-        velocidadCaida = 100;
+        velocidadCaida = 150;
         intervalo = setInterval(bajarLimon, velocidadCaida)
 
     }else if(puntaje == 6){
         clearInterval(intervalo)
-        velocidadCaida = 50;
+        velocidadCaida = 100;
         intervalo = setInterval(bajarLimon, velocidadCaida)
     }else if(puntaje == 10){
         clearInterval(intervalo);
+        velocidadCaida = 50;
         alert("TIENES LOS LIMONES, AHORA TE FALTA SAL Y TEQUILA")
         
     return ;
@@ -100,13 +101,13 @@ function detectarAtrapado(){
 }
 
 function aparecerLimon(){
-    limonX=generarAleatorio(0,canvas.width,canvas.height-ANCHO_LIMON);
+    limonX=generarAleatorio(0,canvas.width-ANCHO_LIMON);
     limonY = 0;
     refrescarPantalla();
     
 }
 function detectarPiso(){
-    if (limonY + ALTURA_LIMON == canvas.height-ALTURA_SUELO ){
+    if (limonY + ALTURA_LIMON >= canvas.height-ALTURA_SUELO ){
         aparecerLimon();
         vidas = vidas  - 1
         mostrarEnSpan("txtVida", vidas)
